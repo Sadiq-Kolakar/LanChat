@@ -1,0 +1,2 @@
+# Runtime. Tkinter ships with the python.org Windows installer (tick "tcl/tk and IDLE").
+sv-ttk>=2.6        # optional modern Tk theme; the app falls back to plain ttk without it
