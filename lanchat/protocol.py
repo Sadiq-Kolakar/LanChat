@@ -68,6 +68,9 @@ def _text(v: Any) -> str:
     return v
 
 
+validate_text = _text  # public alias: used by the node to check outgoing chat text
+
+
 def _port(v: Any) -> int:
     if isinstance(v, bool) or not isinstance(v, int) or not (1 <= v <= 65535):
         raise ProtocolError("bad port")
