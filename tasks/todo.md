@@ -12,9 +12,13 @@ needs peer-to-peer. Each LANchat instance = listener + UDP discovery. Old code k
 - UI: Tkinter + sv-ttk (optional, falls back to ttk).
 
 ## Phases
-- [ ] 1 Inspect + stabilize old code (done: baseline commit, legacy/)
-- [ ] 2 Protocol + discovery + tests
-- [ ] 3 Node (TCP, requests, groups) + tests
-- [ ] 4 UI + settings
-- [ ] 5 Nearby transport research + adapter stubs + docs
-- [ ] 6 Docs, bat scripts, packaging, ZIP, verify
+- [x] 1 Inspect + stabilize old code (done: baseline commit, legacy/)
+- [x] 2 Protocol + discovery + tests
+- [x] 3 Node (TCP, requests, groups) + tests
+- [x] 4 UI + settings
+- [x] 5 Nearby transport research + adapter stubs + docs
+- [x] 6 Docs, bat scripts, packaging, ZIP, verify
+
+## Review
+- 138 tests pass (loopback + Xvfb UI smoke). Run twice, stable.
+- NOT done / not verified: real two-PC LAN test, Bluetooth, Wi-Fi Direct, Windows .exe build, Windows firewall behaviour, real broadcast on a physical NIC.

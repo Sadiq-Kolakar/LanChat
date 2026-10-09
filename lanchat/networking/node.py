@@ -398,12 +398,10 @@ class LanNode:
         with self._lock:
             self._conns.add(conn)
         conn.set_state(PeerState.HANDSHAKE)
+        with self._lock:
+            self._dialing.discard((host, port))  # TCP is up; duplicates are now caught by the hello check
         conn.send("hello", node_id=self.node_id, name=self._name, port=self.port)
-        try:
-            conn.run(self._on_message, self._on_closed)  # this thread becomes the reader
-        finally:
-            with self._lock:
-                self._dialing.discard((host, port))
+        conn.run(self._on_message, self._on_closed)  # this thread becomes the reader
 
     # ======================================================================
     # incoming messages
