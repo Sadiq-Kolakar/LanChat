@@ -134,3 +134,4 @@ Not built or tested in the authoring environment (Linux).
 The original server/client chat is kept in `legacy/` (needs a central server; no discovery).
 LANchat replaced it with a peer-to-peer design because "discover nearby PCs, request, accept"
 does not fit a central server.
+"# LanChat" 
